@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as Highcharts from '../lib/highchart';
 import {CompetitionPane} from './competition-pane';
 import {PersonInfoTab} from './person-info-tab';
-import {UserInfoPane} from './user-info-pane';
+import {UserInfoPane} from './friend-info-pane';
 
 export class IndexTabPane extends React.Component {
 
@@ -68,14 +68,18 @@ export class IndexTabPane extends React.Component {
                         </div>
                     </div>
                     <div className ="tab-pane fade" id="userinfo-tab">
-                        <UserInfoPane/>
-                        <UserInfoPane/>
-                        <UserInfoPane/>
-                        <UserInfoPane/>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <UserInfoPane/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         )
     }
-
 }

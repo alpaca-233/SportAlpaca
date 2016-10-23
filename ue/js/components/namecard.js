@@ -20,7 +20,7 @@ export class NameCard extends React.Component {
                 day:    1
             },
             age: 20,
-            signature:  '没有，快滚'
+            signature:  '这是一条正经的签名'
         },
         dispWatchButton: false
     };
@@ -40,8 +40,8 @@ export class NameCard extends React.Component {
                 <div className='jumbotron-photo' style={{height: '250px'}}><img src='../static/img/ayano_332.png' /></div>
                 <div style={{marginLeft: '8px', marginTop: '16px'}}>
                     <h4 className='username'>{this.props.user.username}</h4>
-                    <img src='../static/img/female_32.png' style={{marginLeft: '4px', height: '16px', width: '16px', display: 'inline', verticalAlign: 'middle'}} />
-                    <br/>
+                        <img src='../static/img/female_32.png' style={{marginLeft: '4px', height: '16px', width: '16px', display: 'inline', verticalAlign: 'middle'}} />
+                        <br/>
                     <div style={{marginTop: '4px'}}>
                         <span className='attribute'>{this.props.user.signature}</span>
                     </div>

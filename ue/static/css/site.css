@@ -126,8 +126,8 @@
 }
 
 hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .competition-attrname{
@@ -138,9 +138,6 @@ hr {
 }
 
 .friend-panel {
-    background: #ffffff;
-    border-radius: 4px;
-    margin-top: 8px;
 }
 
 .button-blue:hover {
@@ -165,4 +162,19 @@ hr {
 
 .button-grey {
     animation: change-button-grey 0.3s forwards reverse;
+}
+
+.small-username {
+    font-size: 14px;
+}
+
+.avatar {
+    border-radius: 4px;
+}
+
+.small-attribute {
+    font-size: 12px;
+    display: inline;
+    vertical-align: middle;
+    color: #8b939e;
 }

@@ -8,7 +8,7 @@ export class User {
 
     getInfo() {
         return {
-            avatar:     '../static/img/photo1.jpg',
+            avatar:     '../static/img/ayano_332.png',
             uid:        123456789,
             gender:     'female',   // female, male, ₵*^&*@#
             username:   'alpaca__',
@@ -22,8 +22,20 @@ export class User {
                 month:  7,
                 day:    1
             },
+            followers: [
+                10086,
+                10087,
+                10088,
+                10089,
+                10000
+            ],
+            follows: [
+                10086, 10087,
+                10088, 10089,
+                10000
+            ],
             age: 20,
-            signature:  '没有，快滚'
+            signature:  '顾狗子的脸，全世界最大最圆'
         };
     }
 }

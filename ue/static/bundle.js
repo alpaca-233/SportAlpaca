@@ -69,11 +69,11 @@
 
 	var _indexTabPane = __webpack_require__(176);
 
-	var _modalDialog = __webpack_require__(185);
+	var _modalDialog = __webpack_require__(187);
 
-	var _framework = __webpack_require__(186);
+	var _framework = __webpack_require__(188);
 
-	var _competitionList = __webpack_require__(187);
+	var _competitionList = __webpack_require__(189);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -22009,7 +22009,7 @@
 	            day: 1
 	        },
 	        age: 20,
-	        signature: '没有，快滚'
+	        signature: '这是一条正经的签名'
 	    },
 	    dispWatchButton: false
 	};
@@ -22039,7 +22039,7 @@
 	        key: "getInfo",
 	        value: function getInfo() {
 	            return {
-	                avatar: '../static/img/photo1.jpg',
+	                avatar: '../static/img/ayano_332.png',
 	                uid: 123456789,
 	                gender: 'female', // female, male, ₵*^&*@#
 	                username: 'alpaca__',
@@ -22053,8 +22053,10 @@
 	                    month: 7,
 	                    day: 1
 	                },
+	                followers: [10086, 10087, 10088, 10089, 10000],
+	                follows: [10086, 10087, 10088, 10089, 10000],
 	                age: 20,
-	                signature: '没有，快滚'
+	                signature: '顾狗子的脸，全世界最大最圆'
 	            };
 	        }
 	    }]);
@@ -22087,9 +22089,9 @@
 
 	var _competitionPane = __webpack_require__(182);
 
-	var _personInfoTab = __webpack_require__(188);
+	var _personInfoTab = __webpack_require__(183);
 
-	var _userInfoPane = __webpack_require__(189);
+	var _friendInfoPane = __webpack_require__(186);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -22184,10 +22186,23 @@
 	                    React.createElement(
 	                        'div',
 	                        { className: 'tab-pane fade', id: 'userinfo-tab' },
-	                        React.createElement(_userInfoPane.UserInfoPane, null),
-	                        React.createElement(_userInfoPane.UserInfoPane, null),
-	                        React.createElement(_userInfoPane.UserInfoPane, null),
-	                        React.createElement(_userInfoPane.UserInfoPane, null)
+	                        React.createElement(
+	                            'table',
+	                            null,
+	                            React.createElement(
+	                                'tbody',
+	                                null,
+	                                React.createElement(
+	                                    'tr',
+	                                    null,
+	                                    React.createElement(
+	                                        'td',
+	                                        null,
+	                                        React.createElement(_friendInfoPane.UserInfoPane, null)
+	                                    )
+	                                )
+	                            )
+	                        )
 	                    )
 	                )
 	            );
@@ -22477,7 +22492,7 @@
 	        // Load the fonts
 
 	        Highcharts.createElement('link', {
-	            href: 'https://fonts.googleapis.com/css?family=Dosis:400,600',
+	            href: '/* https://fonts.googleapis.com/css?family=Dosis:400,600 */',
 	            rel: 'stylesheet',
 	            type: 'text/css'
 	        }, null, document.getElementsByTagName('head')[0]);
@@ -22795,6 +22810,217 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.PersonInfoTab = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var React = _interopRequireWildcard(_react);
+
+	var _infoPane = __webpack_require__(184);
+
+	var _timeline = __webpack_require__(185);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PersonInfoTab = exports.PersonInfoTab = function (_React$Component) {
+	    _inherits(PersonInfoTab, _React$Component);
+
+	    function PersonInfoTab() {
+	        _classCallCheck(this, PersonInfoTab);
+
+	        return _possibleConstructorReturn(this, (PersonInfoTab.__proto__ || Object.getPrototypeOf(PersonInfoTab)).apply(this, arguments));
+	    }
+
+	    _createClass(PersonInfoTab, [{
+	        key: 'render',
+	        value: function render() {
+	            return React.createElement(
+	                'div',
+	                null,
+	                React.createElement('div', { id: 'mileage-chart', style: { width: "700px", display: 'inline' } }),
+	                React.createElement(
+	                    'div',
+	                    { className: 'container-fluid' },
+	                    React.createElement(
+	                        'div',
+	                        { className: 'row-fluid' },
+	                        React.createElement(_infoPane.InfoPane, null),
+	                        React.createElement(_infoPane.InfoPane, null),
+	                        React.createElement(_infoPane.InfoPane, null)
+	                    )
+	                ),
+	                React.createElement(_timeline.TimeLine, null)
+	            );
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var pthis = this;
+	            $(function () {
+	                $('#mileage-chart').highcharts({
+	                    chart: {
+	                        type: 'column'
+	                    },
+	                    title: {
+	                        text: pthis.props.chartData.username + " 的跑步数据"
+	                    },
+	                    subtitle: {
+	                        text: '数据来源: <a href="http://www.baidu.com">辣鸡百度</a>'
+	                    },
+	                    xAxis: {
+	                        type: 'category',
+	                        labels: {
+	                            rotation: -45,
+	                            style: {
+	                                fontSize: '13px',
+	                                fontFamily: 'Verdana, sans-serif'
+	                            }
+	                        }
+	                    },
+	                    yAxis: {
+	                        min: 0,
+	                        title: {
+	                            text: '每日步数 (步)'
+	                        }
+	                    },
+	                    legend: {
+	                        enabled: false
+	                    },
+	                    tooltip: {
+	                        pointFormat: '步数 <b>{point.y:.1f} 千步</b>'
+	                    },
+	                    series: [{
+	                        name: '每日步数',
+	                        data: pthis.props.chartData.weekDate,
+	                        dataLabels: {
+	                            enabled: false,
+	                            rotation: -90,
+	                            color: '#FFFFFF',
+	                            align: 'right',
+	                            format: '{point.y:.1f}', // one decimal
+	                            y: 10, // 10 pixels down from the top
+	                            style: {
+	                                fontSize: '13px',
+	                                fontFamily: 'Verdana, sans-serif'
+	                            }
+	                        }
+	                    }]
+	                });
+	            });
+	        }
+	    }]);
+
+	    return PersonInfoTab;
+	}(React.Component);
+
+	PersonInfoTab.defaultProps = {
+	    chartData: {
+	        username: '羊驼',
+	        weekDate: [['10-01', 23.7], ['10-02', 16.1], ['10-03', 14.2], ['10-04', 14.0], ['10-05', 12.5], ['10-06', 12.1], ['10-07', 11.8], ['10-08', 11.7], ['10-09', 11.1], ['10-10', 11.1], ['10-11', 10.5], ['10-12', 10.4], ['10-13', 10.0], ['10-14', 9.3], ['10-15', 9.3], ['10-16', 9.0], ['10-17', 8.9], ['10-18', 8.9], ['10-19', 8.9], ['10-20', 8.9]]
+	    },
+	    personInfo: {
+	        // TODO
+	    },
+	    events: [
+	        /* ... */
+	    ]
+	};
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.InfoPane = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var React = _interopRequireWildcard(_react);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by alpaca on 16-10-19.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	var InfoPane = exports.InfoPane = function (_React$Component) {
+	    _inherits(InfoPane, _React$Component);
+
+	    function InfoPane() {
+	        _classCallCheck(this, InfoPane);
+
+	        return _possibleConstructorReturn(this, (InfoPane.__proto__ || Object.getPrototypeOf(InfoPane)).apply(this, arguments));
+	    }
+
+	    _createClass(InfoPane, [{
+	        key: 'render',
+	        value: function render() {
+	            return React.createElement(
+	                'div',
+	                { className: 'span3', style: { marginTop: '36px', marginLeft: '24px', float: 'left', width: 200 + 'px' } },
+	                React.createElement(
+	                    'div',
+	                    { className: 'tile', style: { backgroundColor: '#E6E9ED' } },
+	                    React.createElement('img', { src: '../static/img/ayano_332.png', className: 'tile-image big-illustration' }),
+	                    React.createElement(
+	                        'h5',
+	                        { className: 'tile-title', style: { fontSize: '16px' } },
+	                        this.props.data.title
+	                    ),
+	                    React.createElement(
+	                        'span',
+	                        { style: { fontSize: '14px' } },
+	                        this.props.data.description
+	                    ),
+	                    React.createElement('br', null),
+	                    React.createElement(
+	                        'a',
+	                        { className: 'btn btn-info' },
+	                        this.props.data.strong
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return InfoPane;
+	}(React.Component);
+
+	InfoPane.defaultProps = {
+	    data: {
+	        title: '装逼学',
+	        description: '截止目前，你已经装逼长达',
+	        strong: '6666 分钟'
+	    }
+	};
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.TimeLine = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -22910,21 +23136,23 @@
 	};
 
 /***/ },
-/* 184 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.InfoPane = undefined;
+	exports.UserInfoPane = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
 
 	var React = _interopRequireWildcard(_react);
+
+	var _user = __webpack_require__(175);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -22933,62 +23161,116 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by alpaca on 16-10-19.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 查看用户列表时列表中的元素。
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author alpaca
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-	var InfoPane = exports.InfoPane = function (_React$Component) {
-	    _inherits(InfoPane, _React$Component);
+	var UserInfoPane = exports.UserInfoPane = function (_React$Component) {
+	    _inherits(UserInfoPane, _React$Component);
 
-	    function InfoPane() {
-	        _classCallCheck(this, InfoPane);
+	    function UserInfoPane() {
+	        _classCallCheck(this, UserInfoPane);
 
-	        return _possibleConstructorReturn(this, (InfoPane.__proto__ || Object.getPrototypeOf(InfoPane)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (UserInfoPane.__proto__ || Object.getPrototypeOf(UserInfoPane)).apply(this, arguments));
 	    }
 
-	    _createClass(InfoPane, [{
-	        key: 'render',
+	    _createClass(UserInfoPane, [{
+	        key: "render",
 	        value: function render() {
+	            var data = this.props.data;
 	            return React.createElement(
-	                'div',
-	                { className: 'span3', style: { marginTop: '36px', marginLeft: '24px', float: 'left', width: 200 + 'px' } },
+	                "div",
+	                { className: "friend-panel", style: { padding: '8px' } },
 	                React.createElement(
-	                    'div',
-	                    { className: 'tile', style: { backgroundColor: '#E6E9ED' } },
-	                    React.createElement('img', { src: '../static/img/ayano_332.png', className: 'tile-image big-illustration' }),
+	                    "table",
+	                    null,
 	                    React.createElement(
-	                        'h5',
-	                        { className: 'tile-title', style: { fontSize: '16px' } },
-	                        this.props.data.title
-	                    ),
-	                    React.createElement(
-	                        'span',
-	                        { style: { fontSize: '14px' } },
-	                        this.props.data.description
-	                    ),
-	                    React.createElement('br', null),
-	                    React.createElement(
-	                        'a',
-	                        { className: 'btn btn-info' },
-	                        this.props.data.strong
+	                        "tbody",
+	                        null,
+	                        React.createElement(
+	                            "tr",
+	                            null,
+	                            React.createElement(
+	                                "td",
+	                                { style: { verticalAlign: 'top' } },
+	                                React.createElement(
+	                                    "div",
+	                                    null,
+	                                    React.createElement("img", { className: "avatar", src: this.props.data.avatar, height: 48 + 'px', width: 48 + 'px', style: { marginTop: '8px' } })
+	                                )
+	                            ),
+	                            React.createElement(
+	                                "td",
+	                                null,
+	                                React.createElement(
+	                                    "div",
+	                                    { style: { marginLeft: '12px', verticalAlign: 'top' } },
+	                                    React.createElement(
+	                                        "span",
+	                                        { className: "small-username" },
+	                                        React.createElement(
+	                                            "strong",
+	                                            null,
+	                                            data.username
+	                                        )
+	                                    ),
+	                                    React.createElement("img", { src: "../static/img/male_32.png", style: { marginLeft: '4px', height: '12px', width: '12px', display: 'inline', verticalAlign: 'middle' } }),
+	                                    React.createElement(
+	                                        "span",
+	                                        { className: "small-attribute" },
+	                                        "\xA0\xA0\xA0",
+	                                        data.signature
+	                                    ),
+	                                    React.createElement(
+	                                        "div",
+	                                        { style: { fontSize: '12px' } },
+	                                        "\u5173\u6CE8:\xA0",
+	                                        React.createElement(
+	                                            "span",
+	                                            { className: "btn-link" },
+	                                            "233"
+	                                        ),
+	                                        "\xA0|\xA0\u7C89\u4E1D:\xA0",
+	                                        React.createElement(
+	                                            "span",
+	                                            { className: "btn-link" },
+	                                            "666"
+	                                        ),
+	                                        "\xA0| \u91CC\u7A0B:\xA0",
+	                                        React.createElement(
+	                                            "span",
+	                                            { className: "btn-link" },
+	                                            "6666m"
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            React.createElement(
+	                                "td",
+	                                null,
+	                                React.createElement(
+	                                    "span",
+	                                    { className: "btn btn-primary", style: { marginLeft: '370px', padding: '4px', fontSize: '10px', display: 'inline' } },
+	                                    "+ \u5173\u6CE8"
+	                                )
+	                            )
+	                        )
 	                    )
-	                )
+	                ),
+	                React.createElement("hr", { style: { height: '1px', border: 'none', borderTop: '1.5px solid #E6E9ED' } })
 	            );
 	        }
 	    }]);
 
-	    return InfoPane;
+	    return UserInfoPane;
 	}(React.Component);
 
-	InfoPane.defaultProps = {
-	    data: {
-	        title: '装逼学',
-	        description: '截止目前，你已经装逼长达',
-	        strong: '6666 分钟'
-	    }
+	UserInfoPane.defaultProps = {
+	    data: new _user.User().getInfo()
 	};
 
 /***/ },
-/* 185 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23094,7 +23376,7 @@
 	};
 
 /***/ },
-/* 186 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23173,7 +23455,7 @@
 	}(React.Component);
 
 /***/ },
-/* 187 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23283,240 +23565,6 @@
 
 	    return CompetitionList;
 	}(React.Component);
-
-/***/ },
-/* 188 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.PersonInfoTab = undefined;
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var React = _interopRequireWildcard(_react);
-
-	var _infoPane = __webpack_require__(184);
-
-	var _timeline = __webpack_require__(183);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var PersonInfoTab = exports.PersonInfoTab = function (_React$Component) {
-	    _inherits(PersonInfoTab, _React$Component);
-
-	    function PersonInfoTab() {
-	        _classCallCheck(this, PersonInfoTab);
-
-	        return _possibleConstructorReturn(this, (PersonInfoTab.__proto__ || Object.getPrototypeOf(PersonInfoTab)).apply(this, arguments));
-	    }
-
-	    _createClass(PersonInfoTab, [{
-	        key: 'render',
-	        value: function render() {
-	            return React.createElement(
-	                'div',
-	                null,
-	                React.createElement('div', { id: 'mileage-chart', style: { width: "700px", display: 'inline' } }),
-	                React.createElement(
-	                    'div',
-	                    { className: 'container-fluid' },
-	                    React.createElement(
-	                        'div',
-	                        { className: 'row-fluid' },
-	                        React.createElement(_infoPane.InfoPane, null),
-	                        React.createElement(_infoPane.InfoPane, null),
-	                        React.createElement(_infoPane.InfoPane, null)
-	                    )
-	                ),
-	                React.createElement(_timeline.TimeLine, null)
-	            );
-	        }
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            var pthis = this;
-	            $(function () {
-	                $('#mileage-chart').highcharts({
-	                    chart: {
-	                        type: 'column'
-	                    },
-	                    title: {
-	                        text: pthis.props.chartData.username + " 的跑步数据"
-	                    },
-	                    subtitle: {
-	                        text: '数据来源: <a href="http://www.baidu.com">辣鸡百度</a>'
-	                    },
-	                    xAxis: {
-	                        type: 'category',
-	                        labels: {
-	                            rotation: -45,
-	                            style: {
-	                                fontSize: '13px',
-	                                fontFamily: 'Verdana, sans-serif'
-	                            }
-	                        }
-	                    },
-	                    yAxis: {
-	                        min: 0,
-	                        title: {
-	                            text: '每日步数 (步)'
-	                        }
-	                    },
-	                    legend: {
-	                        enabled: false
-	                    },
-	                    tooltip: {
-	                        pointFormat: '步数 <b>{point.y:.1f} 千步</b>'
-	                    },
-	                    series: [{
-	                        name: '每日步数',
-	                        data: pthis.props.chartData.weekDate,
-	                        dataLabels: {
-	                            enabled: false,
-	                            rotation: -90,
-	                            color: '#FFFFFF',
-	                            align: 'right',
-	                            format: '{point.y:.1f}', // one decimal
-	                            y: 10, // 10 pixels down from the top
-	                            style: {
-	                                fontSize: '13px',
-	                                fontFamily: 'Verdana, sans-serif'
-	                            }
-	                        }
-	                    }]
-	                });
-	            });
-	        }
-	    }]);
-
-	    return PersonInfoTab;
-	}(React.Component);
-
-	PersonInfoTab.defaultProps = {
-	    chartData: {
-	        username: '羊驼',
-	        weekDate: [['10-01', 23.7], ['10-02', 16.1], ['10-03', 14.2], ['10-04', 14.0], ['10-05', 12.5], ['10-06', 12.1], ['10-07', 11.8], ['10-08', 11.7], ['10-09', 11.1], ['10-10', 11.1], ['10-11', 10.5], ['10-12', 10.4], ['10-13', 10.0], ['10-14', 9.3], ['10-15', 9.3], ['10-16', 9.0], ['10-17', 8.9], ['10-18', 8.9], ['10-19', 8.9], ['10-20', 8.9]]
-	    },
-	    personInfo: {
-	        // TODO
-	    },
-	    events: [
-	        /* ... */
-	    ]
-	};
-
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.UserInfoPane = undefined;
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var React = _interopRequireWildcard(_react);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 查看用户列表时列表中的元素。
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author alpaca
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	var UserInfoPane = exports.UserInfoPane = function (_React$Component) {
-	    _inherits(UserInfoPane, _React$Component);
-
-	    function UserInfoPane() {
-	        _classCallCheck(this, UserInfoPane);
-
-	        return _possibleConstructorReturn(this, (UserInfoPane.__proto__ || Object.getPrototypeOf(UserInfoPane)).apply(this, arguments));
-	    }
-
-	    _createClass(UserInfoPane, [{
-	        key: 'render',
-	        value: function render() {
-	            return React.createElement(
-	                'div',
-	                { className: 'friend-panel', style: { padding: '8px' } },
-	                React.createElement(
-	                    'table',
-	                    null,
-	                    React.createElement(
-	                        'tbody',
-	                        null,
-	                        React.createElement(
-	                            'tr',
-	                            null,
-	                            React.createElement(
-	                                'td',
-	                                { style: { verticalAlign: 'top' } },
-	                                React.createElement(
-	                                    'div',
-	                                    null,
-	                                    React.createElement('img', { src: this.props.data.avatar, height: 48 + 'px', width: 48 + 'px', style: { borderRadius: '4px' } })
-	                                )
-	                            ),
-	                            React.createElement(
-	                                'td',
-	                                null,
-	                                React.createElement(
-	                                    'div',
-	                                    { style: { marginLeft: '12px', verticalAlign: 'top' } },
-	                                    '\u6587\u4E43\u59D0'
-	                                )
-	                            )
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return UserInfoPane;
-	}(React.Component);
-
-	UserInfoPane.defaultProps = {
-	    data: {
-	        avatar: '../static/img/ayano_cat.png',
-	        uid: 123456789,
-	        gender: 'female', // female, male, ₵*^&*@#
-	        username: 'alpaca__',
-	        phoneNum: '15651656873',
-	        email: 'mist14@smail.nju.edu.cn',
-	        province: '江苏',
-	        city: '南京',
-	        mileage: 66666, // 跑步里程数(m)
-	        birthday: {
-	            year: 1996,
-	            month: 7,
-	            day: 1
-	        },
-	        age: 20,
-	        signature: '没有，快滚'
-	    }
-	};
 
 /***/ }
 /******/ ]);
