@@ -149,11 +149,6 @@ function prepare_competition_framework() {
     return rc['framework'].setState({
         framework: body
     });
-
-    // ReactDOM.render(
-    //     body,
-    //     document.getElementById('body')
-    // )
 }
 
 function render_competition_list() {
