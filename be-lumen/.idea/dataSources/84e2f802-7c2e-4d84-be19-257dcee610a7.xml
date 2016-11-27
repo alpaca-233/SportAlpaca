@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - railway@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="railway">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="buildserver"/>
+    <schema id="3" name="cms"/>
+    <schema id="4" name="information_schema"/>
+    <schema id="5" name="knowledge"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="sql_hw_2"/>
+    <schema id="9" name="sys"/>
+    <schema id="10" name="tc"/>
+    <table id="11" parent="1" name="route"/>
+    <table id="12" parent="1" name="station"/>
+    <table id="13" parent="1" name="train"/>
+    <table id="14" parent="1" name="customer"/>
+    <table id="15" parent="1" name="operator"/>
+    <table id="16" parent="1" name="order"/>
+    <table id="17" parent="1" name="order_return"/>
+    <table id="18" parent="1" name="ticket"/>
+    <column id="19" parent="11" name="rit">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="20" parent="11" name="tid">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="21" parent="11" name="sindex">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="22" parent="11" name="sid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="23" parent="11" name="PRIMARY">
+      <columns>rit</columns>
+      <primary>1</primary>
+    </key>
+    <column id="24" parent="12" name="sid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="25" parent="12" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <key id="26" parent="12" name="PRIMARY">
+      <columns>sid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="27" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="28" parent="13" name="eco">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="29" parent="13" name="firstClass">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="30" parent="13" name="secondClass">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="31" parent="13" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <key id="32" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="33" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="34" parent="14" name="id_num">
+      <mandatory>1</mandatory>
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="35" parent="14" name="id_type">
+      <mandatory>1</mandatory>
+      <data-type>enum(&apos;id&apos;, &apos;passport&apos;)|0</data-type>
+    </column>
+    <column id="36" parent="14" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="37" parent="14" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="38" parent="14" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="39" parent="14" name="phone">
+      <mandatory>1</mandatory>
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <key id="40" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="41" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="42" parent="15" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="43" parent="15" name="id_num">
+      <mandatory>1</mandatory>
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <key id="44" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="45" parent="16" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="46" parent="16" name="timestamp">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="47" parent="16" name="oid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="48" parent="16" name="seatId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="49" parent="16" name="ticketId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="50" parent="16" name="amount">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <key id="51" parent="16" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="52" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="53" parent="17" name="timestamp">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="54" parent="17" name="orderId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="55" parent="17" name="operatorId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="56" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="57" parent="18" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="58" parent="18" name="cid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="59" parent="18" name="startId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="60" parent="18" name="endId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="61" parent="18" name="price">
+      <mandatory>1</mandatory>
+      <data-type>float|0</data-type>
+    </column>
+    <column id="62" parent="18" name="seatType">
+      <mandatory>1</mandatory>
+      <data-type>enum(&apos;eco&apos;, &apos;firstClass&apos;, &apos;secondClass&apos;, &apos;noSeat&apos;)|0</data-type>
+    </column>
+    <column id="63" parent="18" name="tid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="64" parent="18" name="departure">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="65" parent="18" name="arrive">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="66" parent="18" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
